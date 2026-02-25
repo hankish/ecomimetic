@@ -1,7 +1,9 @@
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
+import EleventyNavigationPlugin from "@11ty/eleventy-navigation";
 
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyVitePlugin);
+  eleventyConfig.addPlugin(EleventyNavigationPlugin);
 
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/CNAME");

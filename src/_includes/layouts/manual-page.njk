@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — {{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  {% include "partials/site-header.njk" %}
+
+  <div class="manual-layout" id="manual-layout">
+
+    <aside class="manual-sidebar" id="manual-sidebar" aria-label="Manual table of contents">
+      {% include "partials/manual-toc.njk" %}
+    </aside>
+
+    <main class="manual-content">
+      <div class="manual-breadcrumb-bar">
+        <wa-button
+          id="sidebar-toggle"
+          size="small"
+          appearance="plain"
+          aria-label="Toggle table of contents"
+          aria-expanded="true"
+          aria-controls="manual-sidebar"
+        >
+          <wa-icon name="list" slot="prefix"></wa-icon>
+        </wa-button>
+
+        <wa-breadcrumb>
+          {% 
+            set crumbs = collections.all
+              | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: false }) 
+          %}
+          {% for crumb in crumbs %}
+            {% if crumb.url %}
+              {% if crumb.key == "manual-overview" %}
+                <wa-breadcrumb-item>{{ crumb.title }}</wa-breadcrumb-item>
+              {% else %}
+                <wa-breadcrumb-item href="{{ crumb.url }}">{{ crumb.title }}</wa-breadcrumb-item>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          <wa-breadcrumb-item>{{ title }}</wa-breadcrumb-item>
+        </wa-breadcrumb>
+      </div>
+
+      <h1>{{ title }}</h1>
+
+      {{ content | safe }}
+    </main>
+
+  </div>
+
+  {% include "partials/site-footer.njk" %}
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

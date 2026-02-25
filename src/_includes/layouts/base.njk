@@ -8,39 +8,13 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header-inner">
-
-      <a href="/" class="site-name">Ecomimetic Design</a>
-
-      <a href="/" class="site-logo-link" aria-label="Home">
-        <img src="/assets/images/logo.svg" alt="" class="site-logo" width="40" height="40">
-      </a>
-
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="/participate/" class="nav-link">Participate</a>
-        <a href="/about/" class="nav-link">About</a>
-        <a href="/artifacts/" class="nav-link">Artifacts</a>
-        
-        <wa-button appearance="outlined" href="/manual/" size="small">Manual</wa-button>
-      </nav>
-
-      <button class="hamburger" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </div>
-  </header>
+  {% include "partials/site-header.njk" %}
 
   <main class="content">
     {{ content | safe }}
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; {{ site.title }}</p>
-  </footer>
+  {% include "partials/site-footer.njk" %}
 
   <script type="module" src="/assets/js/main.js"></script>
 </body>

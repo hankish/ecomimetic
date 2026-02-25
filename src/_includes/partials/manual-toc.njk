@@ -1,0 +1,30 @@
+{% set navPages = collections.all | eleventyNavigation("manual") %}
+
+
+<nav class="manual-toc">
+  <ul class="toc-list">
+    {% for entry in navPages %}
+      <li class="toc-section">
+        <span class="toc-section-label">{{ entry.title }}</span>
+        {% if entry.children.length %}
+          <ul class="toc-sublist">
+            {% for child in entry.children %}
+              <li class="toc-item">
+                <a href="{{ child.url }}" class="toc-link">{{ child.title }}</a>
+                {% if child.children.length %}
+                  <ul class="toc-sublist toc-sublist--deep">
+                    {% for grandchild in child.children %}
+                      <li class="toc-item">
+                        <a href="{{ grandchild.url }}" class="toc-link">{{ grandchild.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

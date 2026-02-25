@@ -190,10 +190,148 @@ img {
   margin-bottom: 2rem;
 }
 
+/* ─── Manual Layout ──────────────────────────────────────────────────────── */
+
+.manual-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 4rem);
+}
+
+.manual-sidebar {
+  border-right: 1px solid #e5e5e5;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+  position: sticky;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+}
+
+.manual-content {
+  padding: 2.5rem 3rem 5rem;
+  min-width: 0;
+}
+
+.manual-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.manual-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2.5rem 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.manual-content p {
+  margin: 0 0 1.25rem;
+  color: #333;
+}
+
+.manual-content p.lead {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Collapsed sidebar: hide sidebar, full-width content */
+.manual-layout.sidebar-collapsed {
+  grid-template-columns: 0 1fr;
+}
+
+.manual-layout.sidebar-collapsed .manual-sidebar {
+  display: none;
+}
+
+/* Breadcrumb bar (toggle + breadcrumb inline) */
+.manual-breadcrumb-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Manual ToC list ────────────────────────────────────────────────────── */
+
+.manual-toc { font-size: 0.875rem; }
+
+.toc-list,
+.toc-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-section { margin-bottom: 1.25rem; }
+
+.toc-section-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  padding: 0 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.toc-sublist { padding-left: 0.75rem; }
+.toc-sublist--deep { padding-left: 0.75rem; }
+
+.toc-link {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  color: #444;
+  border-radius: 4px;
+  transition: background 0.1s, color 0.1s;
+}
+
+.toc-link:hover {
+  background: #f4f4f4;
+  color: #000;
+}
+
+/* Mobile manual layout */
+@media (max-width: 768px) {
+  .manual-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .manual-sidebar {
+    display: none;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 50;
+    background: #fff;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.08);
+  }
+
+  .manual-sidebar.sidebar-open {
+    display: block;
+  }
+
+  .manual-layout.sidebar-collapsed .manual-sidebar {
+    display: none;
+  }
+
+  .manual-content {
+    padding: 1.5rem;
+  }
+}
+
 /* ─── Web Awesome theme overrides ────────────────────────────────────────── */
 
 /* Suppress FOUC while component JS loads */
-wa-button:not(:defined) {
+wa-button:not(:defined),
+wa-breadcrumb:not(:defined),
+wa-breadcrumb-item:not(:defined) {
   visibility: hidden;
 }
 
