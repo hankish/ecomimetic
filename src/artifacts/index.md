@@ -1,9 +1,9 @@
 ---
 layout: layouts/base.njk
-title: Media
+title: Artifacts
 ---
 
-# Media
+# Artifacts
 
 <p class="lead">Essays, videos, image essays, and other resources for understanding ecomimetic design.</p>
 
@@ -29,6 +29,6 @@ A growing archive of recorded conversations between practitioners, ecologists, a
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-## Submit Media
+## Submit an Artifact
 
 If you have produced media related to ecomimetic design — a documentation project, an essay, a recorded talk — and would like it considered for this archive, see the [Participate](/participate/) page for submission guidelines.

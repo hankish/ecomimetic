@@ -17,7 +17,7 @@ This requires rethinking the role of the designer, the timescale of the interven
 
 This site is the hub for ecomimetic design knowledge — a growing manual, a media library, and a community of practice. The work here is iterative and open. We expect it to evolve as our collective understanding deepens.
 
-Explore the [Manual](/manual/) for structured principles and frameworks, visit [Media](/media/) for essays and visual resources, or find out how to [Participate](/participate/) in shaping this field alongside us.
+Explore the [Manual](/manual/) for structured principles and frameworks, visit [Artifacts](/artifacts/) for essays and visual resources, or find out how to [Participate](/participate/) in shaping this field alongside us.
 
 ## Rooted in Ecology, Expressed in Design
 
