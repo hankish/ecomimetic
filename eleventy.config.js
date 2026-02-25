@@ -8,6 +8,31 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
+  // Collections
+  eleventyConfig.addCollection("artifacts", (api) =>
+    api.getFilteredByTag("artifact")
+      .sort((a, b) => a.data.title.localeCompare(b.data.title)));
+
+  eleventyConfig.addCollection("referencePages", (api) =>
+    api.getFilteredByTag("referencePage")
+      .sort((a, b) => (a.data.id || '').localeCompare(b.data.id || '')));
+
+  eleventyConfig.addCollection("examples", (api) =>
+    api.getFilteredByTag("example")
+      .sort((a, b) => a.data.title.localeCompare(b.data.title)));
+
+  eleventyConfig.addCollection("experiments", (api) =>
+    api.getFilteredByTag("experiment")
+      .sort((a, b) => a.data.title.localeCompare(b.data.title)));
+
+  eleventyConfig.addCollection("projects", (api) =>
+    api.getFilteredByTag("project")
+      .sort((a, b) => a.data.title.localeCompare(b.data.title)));
+
+  // Filters
+  eleventyConfig.addFilter("hasPage", (items, pageId) =>
+    items.filter(item => item.data.pages && item.data.pages.includes(pageId)));
+
   return {
     dir: {
       input: "src",

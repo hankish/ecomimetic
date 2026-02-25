@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — {{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  {% include "partials/site-header.njk" %}
+
+  <div class="manual-layout" id="manual-layout">
+
+    <aside class="manual-sidebar" id="manual-sidebar" aria-label="Manual table of contents">
+      {% include "partials/manual-toc.njk" %}
+    </aside>
+
+    <main class="manual-content">
+      <div class="manual-breadcrumb-bar">
+        <wa-button
+          id="sidebar-toggle"
+          size="small"
+          appearance="plain"
+          aria-label="Toggle table of contents"
+          aria-expanded="true"
+          aria-controls="manual-sidebar"
+        >
+          <wa-icon name="list" slot="prefix"></wa-icon>
+        </wa-button>
+        <wa-breadcrumb>
+          <wa-breadcrumb-item href="/manual/">Manual</wa-breadcrumb-item>
+          {% if parent %}
+            <wa-breadcrumb-item href="/manual/reference/{{ parent }}/">{{ parent | upper }}</wa-breadcrumb-item>
+          {% endif %}
+          <wa-breadcrumb-item>{{ id }}: {{ title }}</wa-breadcrumb-item>
+        </wa-breadcrumb>
+      </div>
+
+      <p class="reference-id">{{ id }}</p>
+      <h1>{{ title }}</h1>
+
+      {% if description %}
+        <p class="lead">{{ description }}</p>
+      {% endif %}
+
+      {{ content | safe }}
+
+      {% set relatedExamples = collections.examples | hasPage(id) %}
+      {% if relatedExamples.length %}
+        <section class="related-list">
+          <h2>Real World Examples</h2>
+          <ul>
+            {% for item in relatedExamples %}
+              <li>
+                <a href="{{ item.url }}">{{ item.data.title }}</a>
+                {% if item.data.description %} — {{ item.data.description }}{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+
+      {% set relatedExperiments = collections.experiments | hasPage(id) %}
+      {% if relatedExperiments.length %}
+        <section class="related-list">
+          <h2>Potential Experiments</h2>
+          <ul>
+            {% for item in relatedExperiments %}
+              <li>
+                <a href="{{ item.url }}">{{ item.data.title }}</a>
+                {% if item.data.description %} — {{ item.data.description }}{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+
+      {% set relatedProjects = collections.projects | hasPage(id) %}
+      {% if relatedProjects.length %}
+        <section class="related-list">
+          <h2>Related Projects</h2>
+          <ul>
+            {% for item in relatedProjects %}
+              <li>
+                <a href="{{ item.url }}">{{ item.data.title }}</a>
+                {% if item.data.description %} — {{ item.data.description }}{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+
+    </main>
+
+  </div>
+
+  {% include "partials/site-footer.njk" %}
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

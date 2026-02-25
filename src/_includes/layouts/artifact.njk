@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — {{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  {% include "partials/site-header.njk" %}
+
+  <main class="content">
+    <h1>{{ title }}</h1>
+
+    {% if description %}
+      <p class="lead">{{ description }}</p>
+    {% endif %}
+
+    {% if link %}
+      <p>
+        <wa-button href="{{ link }}" target="_blank" rel="noopener noreferrer">
+          <wa-icon name="arrow-up-right-from-square" slot="prefix"></wa-icon>
+          View Artifact
+        </wa-button>
+      </p>
+    {% endif %}
+
+    {% if submitterName %}
+      <p class="artifact-submitter">
+        Submitted by
+        {% if submitterLink %}
+          <a href="{{ submitterLink }}" target="_blank" rel="noopener noreferrer">{{ submitterName }}</a>
+        {% else %}
+          {{ submitterName }}
+        {% endif %}
+      </p>
+    {% endif %}
+  </main>
+
+  {% include "partials/site-footer.njk" %}
+
+  <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>
