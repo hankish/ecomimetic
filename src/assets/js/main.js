@@ -1,3 +1,5 @@
+import '@awesome.me/webawesome/dist/components/button/button.js';
+
 // Hamburger nav toggle
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('#site-nav');
