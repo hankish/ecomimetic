@@ -33,6 +33,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("hasPage", (items, pageId) =>
     items.filter(item => item.data.pages && item.data.pages.includes(pageId)));
 
+  eleventyConfig.addFilter("refPageByUrl", (collection, url) =>
+    collection.find(page => page.url === url));
+
   return {
     dir: {
       input: "src",

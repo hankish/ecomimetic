@@ -31,9 +31,18 @@
         <wa-breadcrumb>
           <wa-breadcrumb-item href="/manual/">Manual</wa-breadcrumb-item>
           {% if parent %}
-            <wa-breadcrumb-item href="/manual/reference/{{ parent }}/">{{ parent | upper }}</wa-breadcrumb-item>
+            {% set parentPage = collections.referencePages | refPageByUrl("/manual/reference/" + parent + "/") %}
+            {% if parentPage %}
+              {% if parentPage.data.parent %}
+                {% set grandPage = collections.referencePages | refPageByUrl("/manual/reference/" + parentPage.data.parent + "/") %}
+                {% if grandPage %}
+                  <wa-breadcrumb-item href="{{ grandPage.url }}">{{ grandPage.data.title }}</wa-breadcrumb-item>
+                {% endif %}
+              {% endif %}
+              <wa-breadcrumb-item href="{{ parentPage.url }}">{{ parentPage.data.title }}</wa-breadcrumb-item>
+            {% endif %}
           {% endif %}
-          <wa-breadcrumb-item>{{ id }}: {{ title }}</wa-breadcrumb-item>
+          <wa-breadcrumb-item>{{ title }}</wa-breadcrumb-item>
         </wa-breadcrumb>
       </div>
 

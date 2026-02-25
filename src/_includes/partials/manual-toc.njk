@@ -16,6 +16,15 @@
                     {% for grandchild in child.children %}
                       <li class="toc-item">
                         <a href="{{ grandchild.url }}" class="toc-link">{{ grandchild.title }}</a>
+                        {% if grandchild.children.length %}
+                          <ul class="toc-sublist toc-sublist--deepest">
+                            {% for leaf in grandchild.children %}
+                              <li class="toc-item">
+                                <a href="{{ leaf.url }}" class="toc-link">{{ leaf.title }}</a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
                       </li>
                     {% endfor %}
                   </ul>

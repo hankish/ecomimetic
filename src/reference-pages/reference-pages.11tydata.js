@@ -3,10 +3,8 @@ export default {
   layout: "layouts/reference-page.njk",
   eleventyComputed: {
     permalink: (data) => {
-      if (data.parent) {
-        return `/manual/reference/${data.parent}/${data.key}/index.html`;
-      }
-      return `/manual/reference/${data.key}/index.html`;
+      const stem = data.page.filePathStem.replace(/^\/reference-pages/, "");
+      return `/manual/reference${stem}/index.html`;
     },
   },
 };
