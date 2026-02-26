@@ -38,3 +38,13 @@ if (sidebarToggle && manualLayout) {
     }
   });
 }
+
+// ─── TOC expand/collapse toggles ─────────────────────────────────────────────
+
+document.querySelectorAll('.toc-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    btn.closest('.toc-item').classList.toggle('toc-item--collapsed', expanded);
+  });
+});
