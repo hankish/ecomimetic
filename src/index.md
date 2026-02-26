@@ -77,9 +77,16 @@ human ecosystems do not occur in natural ecosystems ... (Left off here)
   .card-row {
     display: flex;
     gap: var(--wa-space-m);
+
+    flex-wrap: wrap;
   }
   .card-row > p {
     display: none;
+  }
+  @media(min-width: 700px) {
+    .card-row {
+      flex-wrap: nowrap;
+    }
   }
 
   .def-type {
@@ -102,6 +109,10 @@ human ecosystems do not occur in natural ecosystems ... (Left off here)
   wa-card.def-card.secondary {
     --gradient-color-1: var(--wa-color-pink-30);
     --gradient-color-2: var(--wa-color-pink-60);
+  }
+
+  .def-content > li:not(:last-child) {
+    padding-bottom: var(--wa-space-s);
   }
 
 </style>
