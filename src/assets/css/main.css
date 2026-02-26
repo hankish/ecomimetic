@@ -160,7 +160,7 @@ img {
 /* ─── Page Content ────────────────────────────────────────────────────────── */
 
 .content {
-  max-width: 72ch;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 3rem 2rem 5rem;
 }

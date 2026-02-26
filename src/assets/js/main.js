@@ -1,8 +1,10 @@
+import '@awesome.me/webawesome/dist/styles/webawesome.css';
+
 import '@awesome.me/webawesome/dist/components/button/button.js';
 import '@awesome.me/webawesome/dist/components/icon/icon.js';
 import '@awesome.me/webawesome/dist/components/breadcrumb/breadcrumb.js';
 import '@awesome.me/webawesome/dist/components/breadcrumb-item/breadcrumb-item.js';
-import '@awesome.me/webawesome/dist/components/icon/icon.js';
+import '@awesome.me/webawesome/dist/components/card/card.js';
 
 // ─── Site nav hamburger toggle ────────────────────────────────────────────────
 

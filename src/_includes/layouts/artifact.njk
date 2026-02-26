@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "layouts/_shell.njk" %}
+
+{% block head %}
   <title>{{ title }} — {{ site.title }}</title>
   <meta name="description" content="{{ description or site.description }}">
-  <link rel="stylesheet" href="/assets/css/main.css">
-</head>
-<body>
-  {% include "partials/site-header.njk" %}
+{% endblock %}
 
+{% block body %}
   <main class="content">
     <h1>{{ title }}</h1>
 
@@ -37,9 +33,4 @@
       </p>
     {% endif %}
   </main>
-
-  {% include "partials/site-footer.njk" %}
-
-  <script type="module" src="/assets/js/main.js"></script>
-</body>
-</html>
+{% endblock %}
