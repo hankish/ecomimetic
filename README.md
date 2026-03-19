@@ -1,6 +1,6 @@
-# Ecomimetic Design
+# Eleventy Starter Template
 
-Website and manual for [ecomimetic.design](https://ecomimetic.design) — the hub for knowledge and documentation related to Ecomimetic Design.
+A generic starter template for building static sites with Eleventy, Vite, and Web Awesome.
 
 ## Stack
 
@@ -15,7 +15,7 @@ Website and manual for [ecomimetic.design](https://ecomimetic.design) — the hu
 
 ```bash
 npm install
-npm start        # dev server at http://localhost:8080
+npm run dev      # dev server at http://localhost:8080
 npm run build    # production build → _site/
 ```
 
@@ -25,17 +25,23 @@ npm run build    # production build → _site/
 src/
 ├── _data/           # Global data (site.json)
 ├── _includes/
-│   ├── layouts/     # base.njk, manual-page.njk
-│   └── partials/    # site-header.njk, site-footer.njk, manual-toc.njk
+│   ├── layouts/     # _shell.njk, base.njk
+│   └── partials/    # site-header.njk, site-footer.njk
 ├── assets/
 │   ├── css/main.css
-│   └── js/main.js
-├── manual/          # Manual sub-site (sidebar layout, hierarchical nav)
-├── about/
-├── artifacts/
-├── participate/
-└── index.md
+│   ├── js/main.js
+│   └── images/
+├── index.md
+├── about.md
+├── features.md
+└── contact.md
 ```
+
+## Customization
+
+- Update `src/_data/site.json` with your site title, description, and URL
+- Edit `src/_includes/partials/site-header.njk` to update navigation links
+- Add pages as `.md` files in `src/` using `layout: layouts/base.njk`
 
 ## Deployment
 
