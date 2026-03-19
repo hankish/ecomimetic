@@ -165,20 +165,25 @@ img {
   padding: 3rem 2rem 5rem;
 }
 
-.content h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
+/* ─── Heading styles (mirrors wa-heading-* utilities) ───────────────────── */
+
+.content h1, .manual-content h1,
+.content h2, .manual-content h2,
+.content h3, .manual-content h3,
+.content h4, .manual-content h4,
+.content h5, .manual-content h5 {
+  font-family: var(--wa-font-family-heading);
+  font-weight: var(--wa-font-weight-heading);
+  line-height: var(--wa-line-height-condensed);
+  text-wrap: balance;
   margin: 0 0 0.5rem;
-  letter-spacing: -0.02em;
 }
 
-.content h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 2.5rem 0 0.5rem;
-  letter-spacing: -0.01em;
-}
+.content h1, .manual-content h1 { font-size: var(--wa-font-size-2xl); }
+.content h2, .manual-content h2 { font-size: var(--wa-font-size-xl);  margin-top: 2.5rem; }
+.content h3, .manual-content h3 { font-size: var(--wa-font-size-l);   margin-top: 2rem; }
+.content h4, .manual-content h4 { font-size: var(--wa-font-size-m);   margin-top: 1.5rem; }
+.content h5, .manual-content h5 { font-size: var(--wa-font-size-s);   margin-top: 1.25rem; }
 
 .content p {
   margin: 0 0 1.25rem;
@@ -211,21 +216,6 @@ img {
 .manual-content {
   padding: 2.5rem 3rem 5rem;
   min-width: 0;
-}
-
-.manual-content h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 0.5rem;
-  letter-spacing: -0.02em;
-}
-
-.manual-content h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 2.5rem 0 0.5rem;
-  letter-spacing: -0.01em;
 }
 
 .manual-content p {

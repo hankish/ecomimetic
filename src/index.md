@@ -7,7 +7,7 @@ title: Home
   <wa-card class="def-card primary">
     <div slot="header" class="def-card-header">
       <span class="wa-heading-xl">
-        ec·o·mi·met·ic &nbsp; de·sign
+        ecomimetic design
       </span>
     </div>
     <div class="def-phonetic wa-heading-m">/ˌēkōməˈmedik dəˈzīn/</div>
@@ -27,7 +27,7 @@ title: Home
   <wa-card class="def-card secondary">
     <div slot="header" class="def-card-header">
       <span class="wa-heading-xl">
-        ec·o·mi·met·ic &nbsp; org
+        ecomimetic org
       </span>
     </div>
     <div class="def-phonetic wa-heading-m">/ˌēkōməˈmedik ˌôrg/</div>
@@ -41,33 +41,28 @@ title: Home
 
 ---
 
-The potential of the human species to tackle our largest problems is being constrained by the 
-way we structure our organizations, institutions, and coalitions. 
+## The Pyramid Problem 
 
-We're facing a civilizational challenge that goes largely undiscussed: the pyramid problem.
+The potential of the human species to tackle our largest problems is being constrained by the way 
+we structure our organizations, institutions, and coalitions.
+
+We're facing a civilizational challenge that goes largely undiscussed: the pyramid problem. 
 Many aspects of the metacrisis can be traced back to the failure of hierarchical structures to 
 enable collective sense-making and action. The problem becomes worse as the scale and relational 
 complexity of the coordination increases.
 
-From communities and corporates to countries and coalitions, we must answer the question: 
-**How do we effectively organize ourselves _without_ hierarchy?**
+From communities and corporates to countries and coalitions, we must answer the question:
+How do we effectively organize ourselves without relying solely on hierarchy?
 
 ---
 
-A growing group of systems change thinkers believe that part of the answer lies in the patterns
-of emergent coordination that can be observed in both natural ecosystems and human ecosystems 
-(distributed networks of human coordination).
+## From Pyramids to Polycentricity 
 
-Ecomimetic design is a nascent term seeking to help unify and integrate the innovative work being 
-done in various fields including: organizational design, collective sense-making, economic
-mechanism design, investment structures, tokenomics, distributed governance, steward ownership,
-commons design, human flourishing, and many more.
+If architecting non-hierarchical coordination at scale is the goal, we can learn much from the patterns of emergent coordination observed in natural ecosystems.
 
-Ecomimetic design is related to, but different from biomimicry. Biomimicry invites a wide
-range of designers (from hardware, to architecture, to systems design) to borrow inspiration 
-from biological entities and processes. Ecomimetic design focuses on ___ and acknowledges that 
-we cannot borrow directly from the natural world because many of the problems we're solving in 
-human ecosystems do not occur in natural ecosystems ... (Left off here)
+Ecomimetic design is a nascent term seeking to help unify and integrate the innovative work being done in various fields including: organizational design, collective sense-making, economic mechanism design, investment structures, tokenomics, distributed governance, steward ownership, commons design, human flourishing, and many more.
+
+Ecomimetic design is related to, but different from biomimicry. Biomimicry invites a wide range of designers (from hardware, to architecture, to systems design) to borrow inspiration from biological entities and processes. Ecomimetic design focuses on ___ and acknowledges that we cannot borrow directly from the natural world because many of the problems we're solving in human ecosystems do not occur in natural ecosystems ... (Left off here)
 
 ---
 
@@ -76,7 +71,7 @@ human ecosystems do not occur in natural ecosystems ... (Left off here)
 <style>
   .card-row {
     display: flex;
-    gap: var(--wa-space-m);
+    gap: var(--wa-space-l);
 
     flex-wrap: wrap;
   }
@@ -98,7 +93,8 @@ human ecosystems do not occur in natural ecosystems ... (Left off here)
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 5rem;
+    padding-top: var(--wa-space-l);
+    padding-bottom: var(--wa-space-l);
     background: linear-gradient(45deg, var(--gradient-color-1), var(--gradient-color-2));
     color: white;
   }
